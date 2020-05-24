@@ -1,0 +1,22 @@
+{
+  "name": "solveacrossword",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^26.0.1",
+    "next": "^9.3.6",
+    "node-fetch": "^2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "swr": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^26.0.1"
+  }
+}

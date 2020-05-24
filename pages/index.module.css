@@ -1,0 +1,47 @@
+.body {
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.inputSection {
+  text-align: center;
+  max-width: 1000px;
+  border: 1px solid black;
+  margin: 0 auto 24px;
+  padding: 30px;
+}
+
+.numberInput {
+  margin: 20px;
+}
+
+.instruction {
+  margin-bottom: 8px;
+}
+
+.letterInputs {
+  margin-bottom: 20px;
+}
+
+.suggestionsSection {
+}
+
+.suggestions {
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.suggestionsTitle {
+  display: block;
+}
+
+.suggestion {
+  margin: 5px;
+}
