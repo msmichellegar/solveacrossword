@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
 
     const url = 'www.solveacrossword.com';
 
-    const image = 'www.solveacrossword.com/static/meta-image.jpg';
+    const image = 'www.solveacrossword.com/public/meta-image.jpg';
     const imageAlt = 'An open dictionary with answers to crossword puzzles.';
 
     const twitterHandle = 'msmichellegar';

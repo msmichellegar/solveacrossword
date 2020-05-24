@@ -1,17 +1,10 @@
-import { promises as fs } from 'fs';
+import { words as wordsList } from '../../data/words.json';
 
 const checkIfLettersEmpty = (letters) => {
   const splitLetters = letters.split(',');
   const emptyLetters = splitLetters.filter((letter) => letter === 'empty');
 
   return emptyLetters.length === splitLetters.length;
-};
-
-const getWords = async () => {
-  const filePath = `${process.env.ROOT}/utils/words.txt`;
-  const wordsFile = await fs.readFile(filePath, 'utf8');
-
-  return wordsFile.split('\n');
 };
 
 const getMatchingWordsByLength = (numberOfLetters, wordsList) => {
@@ -53,8 +46,6 @@ export default async (req, res) => {
   let matches = [];
 
   if (!allLettersAreEmpty) {
-    const wordsList = await getWords();
-
     const wordsListByLength = getMatchingWordsByLength(
       numberOfLetters,
       wordsList
