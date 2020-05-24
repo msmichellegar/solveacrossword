@@ -100,7 +100,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {
+      {!!suggestions.length && (
         <div className={styles.suggestionsSection}>
           <h2 className={styles.suggestionsTitle}>Matching Words</h2>
           <div className={styles.suggestions}>
@@ -111,7 +111,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-      }
+      )}
     </div>
   );
 };
