@@ -7,7 +7,6 @@ const Letter = ({ onInput, index }) => {
         className={styles.letter}
         maxLength="1"
         onInput={(event) => onInput(event.target.value, index)}
-        key={index}
       ></input>
     </>
   );

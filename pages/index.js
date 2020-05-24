@@ -92,7 +92,7 @@ const HomePage = () => {
               Enter the letters you already have:
             </p>
             {[...Array(numberOfLetters)].map((_, index) => (
-              <Letter onInput={onLetterInput} index={index} />
+              <Letter onInput={onLetterInput} key={index} index={index} />
             ))}
           </div>
         </div>
