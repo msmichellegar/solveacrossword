@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import MetaTags from '../components/meta-tags';
 
 const GA_TRACKING_ID = 'UA-64172720-4';
 

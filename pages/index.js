@@ -97,16 +97,18 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.suggestionsSection}>
-        <h2 className={styles.suggestionsTitle}>Matching Words</h2>
-        <div className={styles.suggestions}>
-          {suggestions.map((word) => (
-            <span className={styles.suggestion} key={word}>
-              {word}
-            </span>
-          ))}
+      {suggestions && (
+        <div className={styles.suggestionsSection}>
+          <h2 className={styles.suggestionsTitle}>Matching Words</h2>
+          <div className={styles.suggestions}>
+            {suggestions.map((word) => (
+              <span className={styles.suggestion} key={word}>
+                {word}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
