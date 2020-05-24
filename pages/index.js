@@ -11,7 +11,7 @@ const getLettersQuery = (lettersArray) => {
       return 'empty';
     }
 
-    return letter;
+    return letter.toLowerCase();
   });
 
   return lettersWithSpaces.join(',');
