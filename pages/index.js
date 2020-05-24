@@ -36,16 +36,17 @@ const HomePage = () => {
   };
 
   const getSuggestions = async () => {
-    const lettersQuery = getLettersQuery(letters);
+    const numberOfLettersQuery = numberOfLettersRef.current;
+    const lettersQuery = getLettersQuery(lettersRef.current);
 
     const results = await fetch(
-      `/api/word?numberOfLetters=${numberOfLetters}&letters=${lettersQuery}`
+      `/api/word?numberOfLetters=${numberOfLettersQuery}&letters=${lettersQuery}`
     ).then((res) => res.json());
 
     setSuggestions(results);
   };
 
-  const onSelectChange = (event) => {
+  const onSelectChange = async (event) => {
     const newNumberOfLetters = Number(event.target.value);
     let newLettersValue;
 
@@ -64,16 +65,18 @@ const HomePage = () => {
 
     setLetters(newLettersValue);
     setNumberOfLetters(newNumberOfLetters);
-    getSuggestions(numberOfLettersRef.current, lettersRef.current);
+
+    getSuggestions();
   };
 
-  const onLetterInput = (value, index) => {
+  const onLetterInput = async (value, index) => {
     const newLettersValue = [...letters];
 
     newLettersValue[index] = value;
 
     setLetters(newLettersValue);
-    getSuggestions(numberOfLettersRef.current, lettersRef.current);
+
+    getSuggestions();
   };
 
   return (
@@ -97,7 +100,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {suggestions && (
+      {
         <div className={styles.suggestionsSection}>
           <h2 className={styles.suggestionsTitle}>Matching Words</h2>
           <div className={styles.suggestions}>
@@ -108,7 +111,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-      )}
+      }
     </div>
   );
 };
