@@ -3,7 +3,7 @@ import styles from './letter.module.css';
 const Letter = ({ onInput, index }) => {
   return (
     <>
-      <label for={`letter-${index + 1}`} className={styles.label}>
+      <label htmlFor={`letter-${index + 1}`} className={styles.label}>
         {`Letter ${index + 1}`}
       </label>
       <input
