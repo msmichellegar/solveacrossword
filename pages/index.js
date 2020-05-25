@@ -85,7 +85,7 @@ const HomePage = () => {
     <div className={styles.body}>
       <Nav />
       <div className={styles.content}>
-        <h1 className={styles.title}>Solve a Crossword</h1>
+        <h1 className={styles.title}>Crossword Solver</h1>
         <p className={styles.introText}>
           Need help solving a crossword puzzle, or need a word in Scrabble?
           Enter letters you already have, along with the number of letters, and
