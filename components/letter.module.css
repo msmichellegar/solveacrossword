@@ -5,3 +5,16 @@
   font-size: 30px;
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .letter {
+    width: 32px;
+    height: 32px;
+    margin: 3px;
+    font-size: 20px;
+  }
+}
+
+.label {
+  display: none;
+}

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import styles from './index.module.css';
+import Nav from '../components/nav';
 import Letter from '../components/letter';
 import NumberInput from '../components/number-input';
+import Footer from '../components/footer';
 
 const INITIAL_NUMBER_VALUE = 4;
 
@@ -81,37 +83,48 @@ const HomePage = () => {
 
   return (
     <div className={styles.body}>
-      <h1 className={styles.title}>Crossword Solver</h1>
-      <div className={styles.inputSection}>
-        <div className={styles.inputs}>
-          <div className={styles.numberInput}>
-            <NumberInput
-              numberOfLetters={numberOfLetters}
-              onChange={onSelectChange}
-            />
+      <Nav />
+      <div className={styles.content}>
+        <h1 className={styles.title}>Solve a Crossword</h1>
+        <p className={styles.introText}>
+          Need help solving a crossword puzzle, or need a word in Scrabble?
+          Enter letters you already have, along with the number of letters, and
+          find your solution.
+        </p>
+        <div className={styles.inputSection}>
+          <div className={styles.inputs}>
+            <div className={styles.numberInput}>
+              <NumberInput
+                numberOfLetters={numberOfLetters}
+                onChange={onSelectChange}
+              />
+            </div>
+            <div className={styles.letterInputs}>
+              <p className={styles.instruction}>
+                Enter the letters you already have:
+              </p>
+              {[...Array(numberOfLetters)].map((_, index) => (
+                <Letter onInput={onLetterInput} key={index} index={index} />
+              ))}
+            </div>
           </div>
-          <div className={styles.letterInputs}>
-            <p className={styles.instruction}>
-              Enter the letters you already have:
-            </p>
-            {[...Array(numberOfLetters)].map((_, index) => (
-              <Letter onInput={onLetterInput} key={index} index={index} />
-            ))}
-          </div>
+        </div>
+        <div className={styles.suggestionsSection}>
+          {!!suggestions.length && (
+            <>
+              <h2 className={styles.suggestionsTitle}>Matching Words</h2>
+              <div className={styles.suggestions}>
+                {suggestions.map((word) => (
+                  <span className={styles.suggestion} key={word}>
+                    {word}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
-      {!!suggestions.length && (
-        <div className={styles.suggestionsSection}>
-          <h2 className={styles.suggestionsTitle}>Matching Words</h2>
-          <div className={styles.suggestions}>
-            {suggestions.map((word) => (
-              <span className={styles.suggestion} key={word}>
-                {word}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
+      <Footer />
     </div>
   );
 };

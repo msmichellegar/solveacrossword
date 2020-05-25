@@ -37,10 +37,18 @@ export default class MyDocument extends Document {
     );
 
     return (
-      <html>
+      <html lang="en">
         <Head>
           {metaTags}
           {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <link
+            href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto:300"
+            rel="stylesheet"
+          ></link>
+          {/* <link
+            href="https://fonts.googleapis.com/css?family=Nunito:300|PT+Sans"
+            rel="stylesheet"
+          ></link> */}
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
